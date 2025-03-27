@@ -1,0 +1,9 @@
+[submodule "predicting-flu-vaccination"]
+	path = predicting-flu-vaccination-tutorial
+	url = https://github.com/drivendataorg/flu-shot-learning-tutorial
+[submodule "level-up-your-packages-roxygen-documentation"]
+	path = level-up-your-packages-roxygen-documentation
+	url = https://github.com/jayqi/satRday-roxygen-talk
+[submodule "actionable-ethics-for-data-scientists-odsc-workshop"]
+	path = actionable-ethics-for-data-scientists/odsc-west-2019-workshop
+	url = https://github.com/drivendataorg/odsc-actionable-ethics
