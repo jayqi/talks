@@ -1,0 +1,31 @@
+[project]
+name = "talks"
+version = "0"
+requires-python = "~=3.13.2"
+dependencies = [
+    "jinja2",
+    "py-markdown-table",
+    "pydantic",
+    "PyYAML",
+    "sortedcontainers-pydantic",
+]
+
+[dependency-groups]
+dev = ["ruff"]
+
+## TOOLS ##
+
+[tool.ruff]
+line-length = 99
+src = ["main.py"]
+
+[tool.ruff.lint]
+select = [
+    "E", # Pyflakes
+    "F", # Pycodestyle
+    "I", # isort
+]
+unfixable = ["F"]
+
+[tool.ruff.lint.isort]
+force-sort-within-sections = true

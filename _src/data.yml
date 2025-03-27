@@ -1,0 +1,40 @@
+- title: Level Up Your Package's Roxygen Documentation
+  path: level-up-your-packages-roxygen-documentation
+  instances:
+    - venue: satRday Chicago 2019
+      date: 2019-06-27
+      type: talk
+- title: Actionable Ethics for Data Scientists
+  path: actionable-ethics-for-data-scientists
+  instances:
+    - venue: BigDataIgnite 2020
+      date: 2020-10-01
+      type: talk
+      path: actionable-ethics-for-data-scientists/bigdataignite_2020-actionable_ethics-slides.pdf
+    - venue: AnacondaCON 2020
+      date: 2020-06-03
+      type: talk
+      path: actionable-ethics-for-data-scientists/anacondacon_2020-actionable_ethics-slides.pdf
+    - venue: ODSC West 2019
+      date: 2019-10-29
+      type: workshop
+      path: actionable-ethics-for-data-scientists/odsc-west-2019-workshop
+- title: "Predicting Flu Vaccination: An Introduction to Machine Learning"
+  path: predicting-flu-vaccination-tutorial
+  instances:
+    - venue: Good Tech Fest 2020
+      date: 2020-05-20
+      type: workshop
+- title: "5 Q’s with Jay Qi, Lead Data Scientist at DrivenData"
+  path: https://datainnovation.org/2023/11/5-qs-with-jay-qi-lead-data-scientist-at-drivendata/
+  instances:
+    - venue: Center for Data Innovation
+      date: 2023-11-09
+      type: interview
+- title: Reproducible Data Science with Open Source Tools
+  path: reproducible-data-science
+  instances:
+    - venue: GW OSCON 2025
+      date: 2025-03-24
+      type: talk
+      path: reproducible-data-science/gw_oscon_2025-reproducible_data_science-slides.pdf
