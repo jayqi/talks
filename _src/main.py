@@ -34,6 +34,8 @@ class Instance(BaseModel):
 
 
 def to_hyperlink(text: str, url: str) -> str:
+    if not url.startswith("http"):
+        url = "./" + url
     return f"[{text}]({url})"
 
 
