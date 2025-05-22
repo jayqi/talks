@@ -2,6 +2,7 @@ from datetime import date
 from pathlib import Path, PurePosixPath
 from typing import Annotated
 
+from git import Repo
 from jinja2 import Environment, FileSystemLoader
 from py_markdown_table.markdown_table import markdown_table
 from pydantic import BaseModel, Field, HttpUrl
@@ -12,6 +13,9 @@ src_dir = Path(__file__).parent
 data_file = src_dir / "data.yml"
 env = Environment(loader=FileSystemLoader(src_dir / "templates"), autoescape=True)
 template = env.get_template("README.md.jinja")
+
+repo = Repo(src_dir.parent)
+submodules = {submodule.path: submodule for submodule in repo.submodules}
 
 
 class Instance(BaseModel):
@@ -24,7 +28,7 @@ class Instance(BaseModel):
         if self.path is None:
             return f"{self.venue} ({self.type_}, {self.date})"
         else:
-            return to_hyperlink(self.venue, str(self.path)) + f" ({self.type_}, {self.date})"
+            return to_hyperlink(text=self.venue, path=self.path) + f" ({self.type_}, {self.date})"
 
     def __lt__(self, other):
         if isinstance(other, Instance):
@@ -33,9 +37,15 @@ class Instance(BaseModel):
         return NotImplemented
 
 
-def to_hyperlink(text: str, url: str) -> str:
-    if not url.startswith("http"):
-        url = "./" + url
+def to_hyperlink(text: str, path: HttpUrl | PurePosixPath) -> str:
+    if isinstance(path, HttpUrl):
+        url = path
+    else:
+        if str(path) in submodules:
+            submodule = submodules[str(path)]
+            url = f"{submodule.url}/tree/{submodule.hexsha}"
+        else:
+            url = "./" + str(path)
     return f"[{text}]({url})"
 
 
@@ -48,7 +58,7 @@ class Entry(BaseModel):
         if self.path is None:
             title = self.title
         else:
-            title = to_hyperlink(self.title, str(self.path))
+            title = to_hyperlink(text=self.title, path=self.path)
         return {
             "Title": title,
             "Instances": "<br>".join(inst.format() for inst in self.instances),

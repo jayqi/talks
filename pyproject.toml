@@ -3,6 +3,8 @@ name = "talks"
 version = "0"
 requires-python = "~=3.13.2"
 dependencies = [
+    "GitPython",
+    "ipython",
     "jinja2",
     "py-markdown-table",
     "pydantic",

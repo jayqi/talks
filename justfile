@@ -11,3 +11,13 @@ add-submodule repo path:
 # Render README.md
 render-readme:
     uv run _src/main.py
+
+# Lint Python code
+lint:
+    ruff format --check
+    ruff check
+
+# Format Python code
+format:
+    ruff format
+    ruff check --fix
