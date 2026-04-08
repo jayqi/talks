@@ -38,3 +38,10 @@
       date: 2025-03-24
       type: talk
       path: reproducible-data-science/gw_oscon_2025-reproducible_data_science-slides.pdf
+- title: Making Data Ethics Actionable
+  path: making-data-ethics-actionable
+  instances:
+    - venue: GW OSCON 2026
+      date: 2026-03-24
+      type: talk
+      path: making-data-ethics-actionable/gw_oscon_2026-making_data_ethics_actionable-slides.pdf
